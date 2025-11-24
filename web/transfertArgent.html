@@ -1,0 +1,167 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="script.js"></script>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,photo_camera" />
+  <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 35
+}
+</style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+  
+<header>
+  <div class="header-title" style="font-size: 11px;">
+    <h1>Transfert d'argent</h1>
+  </div>
+</header>
+<body>
+
+<div class="topRow">
+<img src="https://static.thenounproject.com/png/3376213-200.png" style="width: 40px; height: 40px;">
+
+
+<md-outlined-text-field id="inputContact" oninput="filterList()">
+</md-outlined-text-field>
+
+</div>
+
+
+<md-list style="max-width: 380px;" id="itemList">
+  <md-list-item type="button" onclick="setReceiver('Aabdoul\'aye', '66 431 22 66'); window.location='montant.html';";><a  >
+    Aabdoul'aye
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 431 22 66</div>
+  </md-list-item>
+  <md-divider id="testtest"></md-divider>
+
+  <md-list-item type="button" onclick="setReceiver('Adam+aa', '66 542 33 77');window.location='montant.html';"> <a  >
+    Adam+aa
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 542 33 77</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+  <md-list-item type="button" onclick="setReceiver(' Amadou\'', '66 764 55 99');window.location='montant.html';"> <a  >
+    Amadou'
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 764 55 99</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+  <md-list-item type="button" onclick="setReceiver('Aissatou3', '66 875 66 00');window.location='montant.html';"> <a  >
+    Aissatou3
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 875 66 00</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+  <md-list-item type="button" onclick="setReceiver('Aminatartr', '66 986 77 11');window.location='montant.html';"> <a  >
+    Aminatartr
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 986 77 11</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+  <md-list-item type="button" onclick="setReceiver('Awa12', '66 456 53 78');window.location='montant.html';"> <a  >
+    Awa12
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 456 53 78</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+  <md-list-item type="button" onclick="setReceiver( 'Babacaryy', '66 653 00 74');window.location='montant.html';"> <a  >
+    Babacaryy
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 653 00 74</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+  <md-list-item type="button" onclick="setReceiver( 'Badu--', '66 653 44 88');window.location='montant.html';"> <a  >
+    Badu--
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 653 44 88</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+  <md-list-item type="button" onclick="setReceiver('Cheikh$^', '66 654 33 86');window.location='montant.html';"> <a  >
+    Cheikh$^
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 654 33 86</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+
+
+  <md-list-item type="button" onclick="setReceiver('Fatu*4', '66 698 58 31');window.location='montant.html';"> <a  >
+    Fatu*4
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 698 58 31</div>
+  </md-list-item>
+  <md-divider></md-divider>
+
+  <md-list-item type="button" onclick="setReceiver('Khadyé2', '66 195 24 63');window.location='montant.html';"> <a  >
+    Khadyé2
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text">66 195 24 63</div>
+  </md-list-item>
+
+
+  <md-divider></md-divider><md-list-item type="button" onclick="setReceiver('Maimoyuna1µ',   '66 354 32 96');window.location='montant.html';"> <a  >
+    Maimoyuna1µ
+    </a> <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text"></div>66 354 32 96</div>
+  </md-list-item>
+
+</md-list>
+
+
+  <div class="top-right">
+    <img id="imgMute" class="speakerSmall" onclick="switchMute()" src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif">
+  </div>
+
+
+    <div class="back" style="cursor: pointer; " onclick="window.location='transfert.html';">
+      <span class="material-symbols-outlined" style="font-size: 45px;">
+        arrow_back
+      </span>
+     </div>
+     
+  <div class="back-bottom" style="cursor: pointer; " onclick="window.location='transfert.html';">
+    <span class="material-symbols-outlined" style="font-size: 30px;">
+        arrow_back
+    </span>
+    <span>Retour</span>
+  </div>
+</body>

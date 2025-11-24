@@ -1,0 +1,102 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="script.js"></script>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,arrow_forward,keyboard_arrow_down,keyboard_arrow_up,photo_camera" />
+  <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 35
+}
+</style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+  
+<header>
+  <div class="header-title" style="font-size: 11px;">
+    <h1>Transfert d'argent</h1>
+  </div>
+</header>
+<body>
+
+<div class="topRow">
+
+
+<md-outlined-text-field type="number" oninput="calcAmount(1)" id="input1">
+</md-outlined-text-field>
+
+<p style="margin: 10px; font-size:20px;">CFA</p>
+
+</div>
+
+  <md-divider style="margin-top: 30px; color: black;"></md-divider>
+  
+  <span class="dot" style="cursor: pointer; " onclick="switchVisibility()" id="switch">
+
+        <span class="material-symbols-outlined" id="arrow_down" style="font-size: 30px;">
+                keyboard_arrow_down
+            </span>
+        <span class="material-symbols-outlined" id="arrow_up" style="font-size: 30px; display: none;">
+                keyboard_arrow_up
+        </span>
+  </span>
+
+<div class="topRow" id="toHide" style="display: none;">
+
+
+<md-outlined-text-field type="number" oninput="calcAmount(0)" id="input0">
+</md-outlined-text-field>
+
+<p style="margin: 10px; font-size:20px;">CFA</p>
+
+</div>
+
+
+  <div class="top-right">
+    <img id="imgMute" class="speakerSmall" onclick="switchMute()" src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif">
+  </div>
+
+
+    <div class="back" style="cursor: pointer; " onclick="window.location='transfertArgent.html';">
+      <span class="material-symbols-outlined" style="font-size: 45px;">
+        arrow_back
+      </span>
+     </div>
+     
+  <div class="back-bottom" style="cursor: pointer; " onclick="window.location='transfertArgent.html';">
+    <span class="material-symbols-outlined" style="font-size: 30px;">
+        arrow_back
+    </span>
+    <span>Retour</span>
+  </div>
+  <div class="forward-bottom" style="cursor: pointer; " onclick="setAmount();window.location='confirmation.html'; ">
+   
+    <span>Suivant</span>
+     <span class="material-symbols-outlined" style="font-size: 30px;">
+        arrow_forward
+    </span>
+  </div>
+</body>

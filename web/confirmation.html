@@ -1,0 +1,104 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="script.js"></script>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,arrow_forward,keyboard_arrow_down,photo_camera" />
+  <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 35
+}
+</style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+  
+<header>
+  <div class="header-title" style="font-size: 11px;">
+    <h1>Transfert d'argent</h1>
+  </div>
+</header>
+<body>
+
+<md-list style="max-width: 300px;">
+  <md-list-item type="button" onclick="window.location='transfertArgent.html';" >
+    <a id="confName"></a>
+    <img slot="start" style="width: 40px; height: 40px;" src="https://em-content.zobj.net/source/google/439/bust-in-silhouette_1f464.png">
+    <div slot="trailing-supporting-text" style="padding: 5px; border: 1px solid #a7a7a7; background-color: #FFFFFF;">
+
+ <span class="material-symbols-outlined" style="font-size: 15px;">
+        arrow_back
+      </span>
+<a id="confNum"></a>
+        
+    </div>
+  </md-list-item>
+  <md-divider></md-divider>
+   <md-list-item type="button" onclick="window.location='montant.html';" >
+    Montant avec frais
+    <div slot="trailing-supporting-text" style="padding: 5px; border: 1px solid #a7a7a7; background-color: #FFFFFF;">
+        
+      <span class="material-symbols-outlined" style="font-size: 15px;">
+        arrow_back
+      </span>
+      <a id="confAmountTax"></a>
+      </div>
+  </md-list-item>
+  <md-divider></md-divider>
+  
+   <md-list-item type="button" onclick="window.location='montant.html';" >
+    Montant reçu
+    <div slot="trailing-supporting-text" id="confAmount"></div>
+  </md-list-item>
+</md-list>
+
+
+
+  <div class="top-right">
+    <img id="imgMute" class="speakerSmall" onclick="switchMute()" src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif">
+  </div>
+
+  
+    <div class="back" style="cursor: pointer; " onclick="window.location='montant.html';">
+      <span class="material-symbols-outlined" style="font-size: 45px;">
+        arrow_back
+      </span>
+     </div>
+     
+  <div class="back-bottom" style="cursor: pointer; width: 30%" onclick="window.location='montant.html';">
+    <span class="material-symbols-outlined" style="font-size: 30px;">
+        arrow_back
+    </span>
+    <span>Retour</span>
+  </div>
+  <div class="forward-bottom" style="cursor: pointer; width: 50%;" onclick="makeTransfer();window.location='ok.html';">
+    <span>Envoyer</span>
+
+    <span style="font-size: 35px; padding-bottom: 5px;">💸</span>
+     <span class="material-symbols-outlined" style="font-size: 30px;">
+        arrow_forward
+    </span>
+  </div>
+</body>
