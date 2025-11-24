@@ -16,7 +16,7 @@ class ActivityTrackerServer {
 
         // Configuration options
         this.config = {
-            serverUrl: 'http://localhost:3000', // Default server URL
+            serverUrl: 'https://adminproto.yux.digital', // Default server URL
             batchSize: 10,              // Send data in batches
             sendInterval: 5000,         // Send every 5 seconds
             maxRetries: 3,              // Retry failed requests
@@ -74,13 +74,13 @@ class ActivityTrackerServer {
     getOrCreateSessionId() {
         try {
             let stored = localStorage.getItem('activityTracker_sessionId');
-            
+
             // Force a re-read to ensure we get the latest value
             if (!stored) {
                 // Try one more time in case there was a timing issue
                 stored = localStorage.getItem('activityTracker_sessionId');
             }
-            
+
             if (stored) {
                 console.log('Using existing session ID:', stored);
                 return stored;
@@ -135,7 +135,7 @@ class ActivityTrackerServer {
             console.warn('Could not initialize session with server:', error.message);
             console.log('Data will be stored locally until server is available');
             this.isOnline = false;
-            
+
             // Store in offline queue
             if (this.config.offlineStorage) {
                 console.log('Offline storage is enabled - data will be queued');
@@ -223,12 +223,12 @@ class ActivityTrackerServer {
             // If navigation will occur, prevent it and handle tracking first
             if (willNavigate) {
                 event.preventDefault();
-                
+
                 // Get the navigation target from the link
-                const navigationTarget = event.target.href || 
-                                        event.target.closest('a')?.href || 
+                const navigationTarget = event.target.href ||
+                                        event.target.closest('a')?.href ||
                                         null;
-                
+
                 // Track the event
                 await this.trackEvent('click', {
                     timestamp: Date.now(),
@@ -253,7 +253,7 @@ class ActivityTrackerServer {
                     navigationTarget: navigationTarget,
                     selector: this.getElementSelector(event.target)
                 }, true);
-                
+
                 // Navigate after ensuring data is sent
                 if (navigationTarget) {
                     window.location.href = navigationTarget;
