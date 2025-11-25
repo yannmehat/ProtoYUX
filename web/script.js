@@ -53,10 +53,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     if(isMuted == 1) {
-        document.getElementById("imgMute").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkkoTcDw5Ki3jcv3bVTHRiSLKHEGEaNoQ6wA&s";
+        document.getElementById("imgMute").src="../assets/mute.png";
+        if(document.getElementById("vocal")) {
+            document.getElementById("vocal").volume = 0;
+        }
     }
     else {
         document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
+        if(document.getElementById("vocal")) {
+            document.getElementById("vocal").volume = 1;
+        }
     }
     
     if(showInput == 1 && (document.getElementById("switch"))) {
@@ -242,12 +248,19 @@ function switchMute() {
     if(isMuted==0) {
         isMuted=1;
         sessionStorage.setItem("isMuted", 1);
-         document.getElementById("imgMute").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkkoTcDw5Ki3jcv3bVTHRiSLKHEGEaNoQ6wA&s";
+        document.getElementById("imgMute").src="../assets/mute.png";
+        if(document.getElementById("vocal")) {
+            document.getElementById("vocal").volume = 0;
+        }
     }   
     else {
         isMuted=0;
         sessionStorage.setItem("isMuted", 0);
         document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
+        if(document.getElementById("vocal")) {
+            document.getElementById("vocal").volume = 1;
+            document.getElementById("vocal").play();
+        }
     }
 
 }
