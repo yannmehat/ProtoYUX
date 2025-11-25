@@ -13,6 +13,22 @@
   'opsz' 35
 }
 </style>
+  <script src="activity-tracker-server.js"></script>
+<script>
+    let tracker;
+    document.addEventListener('DOMContentLoaded', function() {
+      tracker = new ActivityTrackerServer({
+        serverUrl: 'https://adminproto.yux.digital',
+        experimentId: 'my-thesis-study'
+      });
+      window.tracker = tracker; // Make it globally accessible
+    });
+  </script>
+
+
+
+
+
   <script type="importmap">
     {
       "imports": {
@@ -45,11 +61,11 @@
     <span class="resume"><b id="confAmountTax"></b> envoyés à <br> <b id="confName"></b> - <a id="confNum"></a></span>
     <span class="resume" style="font-size: 80px;">👍🏿</span>
 
-  <div class="forward-bottom" style="cursor: pointer; width: 50%;" onclick="window.location='index.html';">
+  <a class="forward-bottom" style="cursor: pointer; text-decoration: none; width: 50%;" href='index.html'>
     <span>Suivant</span>
 
      <span class="material-symbols-outlined" style="font-size: 30px;">
         arrow_forward
     </span>
-  </div>
+  </a>
 </body>

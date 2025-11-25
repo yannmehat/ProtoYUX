@@ -15,6 +15,11 @@ var showInput = 0;
 document.addEventListener("DOMContentLoaded", function(event) {
 
     
+
+    if(sessionStorage.getItem("isMuted")) {
+        isMuted = sessionStorage.getItem("isMuted");
+    } 
+
     if(sessionStorage.getItem("montant")) {
         montant = sessionStorage.getItem("montant");
     }
@@ -36,10 +41,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     if(sessionStorage.getItem("credit")) {
         credit = sessionStorage.getItem("credit");
-    }
-
-    if(sessionStorage.getItem("isMuted")) {
-        isMuted = sessionStorage.getItem("isMuted");
     }
 
     if(sessionStorage.getItem("amountCredit")) {
