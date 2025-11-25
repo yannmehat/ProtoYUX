@@ -52,11 +52,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
 
+    if(isMuted == 1) {
+        document.getElementById("imgMute").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkkoTcDw5Ki3jcv3bVTHRiSLKHEGEaNoQ6wA&s";
+    }
+    else {
+        document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
+    }
     
     if(showInput == 1 && (document.getElementById("switch"))) {
         switchVisibility();
     }
-
 
 
 
@@ -164,14 +169,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(document.getElementById('confCredit')) {
         document.getElementById('confCredit').innerHTML = numberWithSpaces(amountCredit) + " CFA";
     }
-
        
-        if(isMuted == 1) {
-            document.getElementById("imgMute").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkkoTcDw5Ki3jcv3bVTHRiSLKHEGEaNoQ6wA&s";
-        }
-        else {
-             document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
-        }
          
 
 
@@ -198,6 +196,7 @@ function filterList() {
     filt = filt.replace(/\s/g, '');
     ul = document.getElementById("itemList");
     li = ul.getElementsByTagName('md-list-item');
+    
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
@@ -233,8 +232,6 @@ function filterList() {
       li[i].style.display = shouldDisplay ? "" : "none";
       li[i].nextElementSibling.style.display = shouldDisplay ? "" : "none";
     }
-
-  
   }
 
 function numberWithSpaces(x) {
