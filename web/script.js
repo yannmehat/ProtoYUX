@@ -13,10 +13,6 @@ var isMuted = 0;
 var showInput = 0;
 
 
-document.addEventListener("loadstart", function(event) {
-
-});
-
 document.addEventListener("DOMContentLoaded", function(event) {
 
 
@@ -34,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
         if(document.getElementById("vocal")) {
             document.getElementById("vocal").volume = 1;
+            document.getElementById("vocal").play();
         }
     }
 
