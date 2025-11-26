@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f7c3e1-fd86-4b58-b960-ba78013e6d37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/assets/achatCredit.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/credit.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/ezgif.com-crop.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/mute.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/ok.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/transfert.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/transfertArgent.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity-tracker-server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/achatCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/achatCredit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/confirmationCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/confirmationCredit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/credit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/credit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/montant.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/montant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/montantCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/montantCredit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ok.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/ok.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/okCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/okCredit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/transfert.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/transfert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/transfertArgent.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/transfertArgent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763968094899</updated>
       <workItem from="1763968098743" duration="10079000" />
-      <workItem from="1764087673622" duration="2072000" />
+      <workItem from="1764087673622" duration="3950000" />
     </task>
     <servers />
   </component>

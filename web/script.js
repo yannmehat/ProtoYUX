@@ -1,7 +1,7 @@
 var montant = 0;
 var credit = 0;
 
-var receiverNum = "";;
+var receiverNum = "";
 var receiverName;
 var amount;
 var amountFlat;
@@ -14,16 +14,16 @@ var showInput = 0;
 
 
 document.addEventListener("loadstart", function(event) {
-    
-}
+
+});
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    
+
 
     if(sessionStorage.getItem("isMuted")) {
         isMuted = sessionStorage.getItem("isMuted");
-    } 
+    }
     if(isMuted == 1) {
         document.getElementById("imgMute").src="./assets/mute.png";
         if(document.getElementById("vocal")) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
 
-    
+
     if(showInput == 1 && (document.getElementById("switch"))) {
         switchVisibility();
     }
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         credit = 5000;
         sessionStorage.setItem("credit", credit);
     }
-    
+
     if(document.getElementById('montant')) {
         document.getElementById('montant').innerHTML = numberWithSpaces(montant) + " CFA";
     }
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(document.getElementById('confAmount')) {
         document.getElementById('confAmount').innerHTML = numberWithSpaces(amountFlat) + " CFA";
     }
-        
+
     if(document.getElementById('credit')) {
         document.getElementById('credit').innerHTML = numberWithSpaces(credit) + " CFA<br />crédit";
     }
@@ -116,12 +116,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if(receiverNum != "undefined" && receiverNum != ""){
             document.getElementById('inputContactCredit').value = receiverNum;
             filterList();
-            
+
         }
         else {
             document.getElementById('inputContactCredit').value = "667 457 99 22";
             filterList();
-            
+
         }
     }
 
@@ -137,17 +137,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
 
-    
+
      if(document.getElementById('inputCredit')) {
         if(amountCredit != "undefined" && amountCredit != ""){
-            
+
             document.getElementById('inputCredit').value = amountCredit;
-            
+
         }
         else {
             document.getElementById('inputCredit').value = "";
         }
-        
+
 
     }
 
@@ -156,18 +156,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
      if(document.getElementById('input1')) {
         if(amount != "undefined" && amount != ""){
-            
+
             document.getElementById('input1').value = amount;
-            
+
         }
         else {
             document.getElementById('input1').value = "";
         }
-        
+
 
     }
 
-    
+
      if(document.getElementById('input0')) {
         if(amountFlat != "undefined" && amountFlat != ""){
             document.getElementById('input0').value = amountFlat;
@@ -178,12 +178,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
 
-    
+
     if(document.getElementById('confCredit')) {
         document.getElementById('confCredit').innerHTML = numberWithSpaces(amountCredit) + " CFA";
     }
-       
-         
+
+
 
 
     if(document.getElementById('inputContact')) {
@@ -205,7 +205,7 @@ function filterList() {
         input = document.getElementById('inputContact');
     }
     if(document.getElementById('custom')) {
-        
+
         document.getElementById('custom').innerHTML = input.value.toUpperCase();
     }
 
@@ -213,29 +213,29 @@ function filterList() {
     filt = filt.replace(/\s/g, '');
     ul = document.getElementById("itemList");
     li = ul.getElementsByTagName('md-list-item');
-    
+
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
       txtValue = txtValue.replace(/\s/g, '');
 
-      
+
       div = li[i].getElementsByTagName("div")[0];
       numValue = div.textContent || div.innerText;
       numValue = numValue.replace(/\s/g, '');
-      
-      // split filter by spaces, gives ["app", "MN"] in your example  
+
+      // split filter by spaces, gives ["app", "MN"] in your example
       //let filters = filter.split(" ");
-        
-      // remove the empty filters (if your filter string 
+
+      // remove the empty filters (if your filter string
       // starts or ends by a space) since they are source of errors
 
       // Array.filter takes in parameter a function returning a boolean
-      // it create a new array containing only element where 
+      // it create a new array containing only element where
       // the function returned truthy value
-      // here we return the length of the string which is falsy (== 0) for "" 
+      // here we return the length of the string which is falsy (== 0) for ""
       // and truthy for every other string (!= 0)
-      //filters = filters.filter(f => f.length);   
+      //filters = filters.filter(f => f.length);
 
       let shouldDisplay = true
       // test each filter and store true only if string contains all filter
@@ -248,7 +248,7 @@ function filterList() {
       li[i].style.display = shouldDisplay ? "" : "none";
       li[i].nextElementSibling.style.display = shouldDisplay ? "" : "none";
     }
-    
+
   }
 
 function numberWithSpaces(x) {
@@ -263,7 +263,7 @@ function switchMute() {
         if(document.getElementById("vocal")) {
             document.getElementById("vocal").volume = 0;
         }
-    }   
+    }
     else {
         isMuted=0;
         sessionStorage.setItem("isMuted", 0);
@@ -281,8 +281,8 @@ function setReceiver(name, num) {
     sessionStorage.setItem("receiverName", receiverName);
     receiverNum = num;
     sessionStorage.setItem("receiverNum", receiverNum);
-    
-    
+
+
 }
 
 
@@ -291,7 +291,7 @@ function switchVisibility() {
     var target =  document.getElementById("toHide");
     var targetUp = document.getElementById("arrow_up");
     var targetDown = document.getElementById("arrow_down");
-    if(target.style.display == "none") 
+    if(target.style.display == "none")
     {
         target.style.display = "";
         targetUp.style.display = "";
@@ -318,7 +318,7 @@ function calcAmount(location) {
         input1.value = "" + Math.round(Number(input0.value)*1.001);
 
     }
-    
+
 }
 
 function setAmount() {
@@ -347,7 +347,7 @@ function setCredit() {
 function makeTransfer() {
     if(amount > 0) {
         montant = montant - amount;
-        sessionStorage.setItem("montant", montant); 
+        sessionStorage.setItem("montant", montant);
     }
 }
 
@@ -356,7 +356,7 @@ function buyCredit() {
 
     montant = parseInt(montant) - parseInt(amountCredit);
     sessionStorage.setItem("montant", montant);
-    
+
     if(receiverName == "Ce téléphone") {
         credit = parseInt(credit) + parseInt(amountCredit);
         sessionStorage.setItem("credit", credit);
@@ -365,7 +365,7 @@ function buyCredit() {
 }
 
 function resetVariables() {
-        
+
     receiverNum = "";
     receiverName = "";
     amount = "";
@@ -375,7 +375,7 @@ function resetVariables() {
 
 
     sessionStorage.setItem("receiverNum", receiverNum);
-    
+
     sessionStorage.setItem("receiverName", receiverName);
 
     sessionStorage.setItem("confAmountTax", amount);
@@ -384,7 +384,7 @@ function resetVariables() {
 
     sessionStorage.setItem("amountCredit", amountCredit);
 
-    
+
     sessionStorage.setItem("showInput", showInput);
 
 
