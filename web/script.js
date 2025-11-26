@@ -1,7 +1,7 @@
 var montant = 0;
 var credit = 0;
 
-var receiverNum;
+var receiverNum = "";;
 var receiverName;
 var amount;
 var amountFlat;
@@ -12,6 +12,11 @@ var isMuted = 0;
 
 var showInput = 0;
 
+
+document.addEventListener("loadstart", function(event) {
+    
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
     
@@ -19,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(sessionStorage.getItem("isMuted")) {
         isMuted = sessionStorage.getItem("isMuted");
     } 
+    if(isMuted == 1) {
+        document.getElementById("imgMute").src="./assets/mute.png";
+        if(document.getElementById("vocal")) {
+            document.getElementById("vocal").volume = 0;
+        }
+    }
+    else {
+        document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
+        if(document.getElementById("vocal")) {
+            document.getElementById("vocal").volume = 1;
+        }
+    }
 
     if(sessionStorage.getItem("montant")) {
         montant = sessionStorage.getItem("montant");
@@ -52,18 +69,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
 
-    if(isMuted == 1) {
-        document.getElementById("imgMute").src="../assets/mute.png";
-        if(document.getElementById("vocal")) {
-            document.getElementById("vocal").volume = 0;
-        }
-    }
-    else {
-        document.getElementById("imgMute").src="https://media.baamboozle.com/uploads/images/1263646/3b41b5c9-272d-4a4f-a89b-b46b07edfcc3.gif";
-        if(document.getElementById("vocal")) {
-            document.getElementById("vocal").volume = 1;
-        }
-    }
     
     if(showInput == 1 && (document.getElementById("switch"))) {
         switchVisibility();
@@ -111,10 +116,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if(receiverNum != "undefined" && receiverNum != ""){
             document.getElementById('inputContactCredit').value = receiverNum;
             filterList();
+            
         }
         else {
-            document.getElementById('inputContactCredit').value = "66 457 99 22";
+            document.getElementById('inputContactCredit').value = "667 457 99 22";
             filterList();
+            
         }
     }
 
@@ -190,12 +197,16 @@ function isLetter(str) {
 }
 
 function filterList() {
-    var input, filt, ul, li, a, div, i, txtValue, numValue, count;
+    var input, filt, ul, li, a, div, i, txtValue, numValue, custom;
     if(document.getElementById('inputContactCredit')) {
         input = document.getElementById('inputContactCredit');
     }
     if(document.getElementById('inputContact')) {
         input = document.getElementById('inputContact');
+    }
+    if(document.getElementById('custom')) {
+        
+        document.getElementById('custom').innerHTML = input.value.toUpperCase();
     }
 
     filt = input.value.toUpperCase();
@@ -237,6 +248,7 @@ function filterList() {
       li[i].style.display = shouldDisplay ? "" : "none";
       li[i].nextElementSibling.style.display = shouldDisplay ? "" : "none";
     }
+    
   }
 
 function numberWithSpaces(x) {
@@ -247,7 +259,7 @@ function switchMute() {
     if(isMuted==0) {
         isMuted=1;
         sessionStorage.setItem("isMuted", 1);
-        document.getElementById("imgMute").src="../assets/mute.png";
+        document.getElementById("imgMute").src="./assets/mute.png";
         if(document.getElementById("vocal")) {
             document.getElementById("vocal").volume = 0;
         }
@@ -312,7 +324,7 @@ function calcAmount(location) {
 function setAmount() {
     var input1 = document.getElementById("input1");
     var input0 = document.getElementById("input0");
-    if(input1 > 0 && input0 > 0) {
+    if(input1.value > 0 && input0.value > 0) {
         amountFlat = input0.value;
         amount = input1.value;
     }
@@ -326,15 +338,22 @@ function setAmount() {
 
 function setCredit() {
     amountCredit = document.getElementById("inputCredit").value;
+     if(!amountCredit > 0) {
+        amountCredit = 0;
+    }
     sessionStorage.setItem("amountCredit", amountCredit);
 }
 
 function makeTransfer() {
-    montant = montant - amount;
-    sessionStorage.setItem("montant", montant); 
+    if(amount > 0) {
+        montant = montant - amount;
+        sessionStorage.setItem("montant", montant); 
+    }
 }
 
 function buyCredit() {
+    if(amountCredit > 0 && montant > 0) {
+
     montant = parseInt(montant) - parseInt(amountCredit);
     sessionStorage.setItem("montant", montant);
     
@@ -342,12 +361,13 @@ function buyCredit() {
         credit = parseInt(credit) + parseInt(amountCredit);
         sessionStorage.setItem("credit", credit);
     }
+    }
 }
 
 function resetVariables() {
         
-    receiverNum = "undefined";
-    receiverName = "undefined";
+    receiverNum = "";
+    receiverName = "";
     amount = "";
     amountFlat = "";
     amountCredit = "";
