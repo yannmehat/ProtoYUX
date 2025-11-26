@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f7c3e1-fd86-4b58-b960-ba78013e6d37" name="Changes" comment="" />
+    <list default="true" id="b3f7c3e1-fd86-4b58-b960-ba78013e6d37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/assets/achatCredit.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/credit.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/ezgif.com-crop.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/mute.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/ok.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/transfert.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/transfertArgent.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity-tracker-server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/achatCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/achatCredit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/confirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/confirmationCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/confirmationCredit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/credit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/credit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/montant.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/montant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/montantCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/montantCredit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ok.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/ok.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/okCredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/okCredit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/transfert.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/transfert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/transfertArgent.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/transfertArgent.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +32,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -23,19 +49,26 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mac/Downloads/theseTracker/ActivityTracker-main/server",
+    "last_opened_file_path": "/Users/mac/Downloads/theseTracker/ActivityTracker-main/web",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="TEST_OBJECT" value="class" />
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -49,11 +82,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763968094899</updated>
-      <workItem from="1763968098743" duration="2487000" />
+      <workItem from="1763968098743" duration="10079000" />
+      <workItem from="1764087673622" duration="2072000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
