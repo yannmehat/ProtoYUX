@@ -190,7 +190,7 @@ function isLetter(str) {
 }
 
 function filterList() {
-    var input, filt, ul, li, a, div, i, txtValue, numValue;
+    var input, filt, ul, li, a, div, i, txtValue, numValue, count;
     if(document.getElementById('inputContactCredit')) {
         input = document.getElementById('inputContactCredit');
     }
@@ -231,7 +231,6 @@ function filterList() {
       //filters.forEach(filt => {
         shouldDisplay = numValue.toUpperCase().includes(filt) || txtValue.toUpperCase().includes(filt)
       //})
-      
       // update visibility
       // set visible if the string include all filters
       // or if there is no filter
@@ -313,10 +312,16 @@ function calcAmount(location) {
 function setAmount() {
     var input1 = document.getElementById("input1");
     var input0 = document.getElementById("input0");
-    amountFlat = input0.value;
-    sessionStorage.setItem("confAmount", amountFlat);
-    amount = input1.value;
-    sessionStorage.setItem("confAmountTax", amount);
+    if(input1 > 0 && input0 > 0) {
+        amountFlat = input0.value;
+        amount = input1.value;
+    }
+    else {
+        amountFlat = 0;
+        amount = 0;
+    }
+        sessionStorage.setItem("confAmountTax", amount);
+        sessionStorage.setItem("confAmount", amountFlat);
 }
 
 function setCredit() {
