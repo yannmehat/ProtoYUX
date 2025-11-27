@@ -18,8 +18,7 @@ h1 {
 }
 
 input {
-  transform: translateZ(0);
-  font-family: Arial;
+ 
 }
 
 header {
@@ -143,6 +142,8 @@ p{
 
 
 md-outlined-text-field {
+   transform: translateZ(0);
+  font-family: Arial;
   width: 75%;
   background-color: #FFFFFF;
 }
